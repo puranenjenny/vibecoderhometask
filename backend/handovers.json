@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1776414653735,
+    "createdAt": "2026-03-25T18:12:10.123456",
+    "onCallPerson": "Jenny Smith",
+    "shiftDate": "2026-03-25",
+    "summary": "API latency spike during evening shift",
+    "whatHappened": "Response times increased noticeably around 20:10. Alerts were triggered for elevated latency in the API. The service stayed up, but some requests were slower than usual. A restart of one backend service reduced the issue temporarily.",
+    "nextSteps": "Monitor API latency during the next shift and check whether the database connection pool needs adjustment. If latency increases again, review recent deploy logs.",
+    "priority": "Medium"
+  },
+  {
+    "id": 1776416986349,
+    "createdAt": "2026-03-27T09:45:22.654321",
+    "onCallPerson": "Maija Mallinen",
+    "shiftDate": "2026-03-27",
+    "summary": "Quiet shift with no incidents",
+    "whatHappened": "No alerts, incidents, or unexpected behaviour during the shift. Scheduled jobs completed normally and internal dashboards looked healthy throughout the evening.",
+    "nextSteps": "No immediate follow-up needed. Continue normal monitoring.",
+    "priority": "Low"
+  },
+  {
+    "id": 1776417339696,
+    "createdAt": "2026-04-01T14:03:55.111222",
+    "onCallPerson": "Oskari Korhonen",
+    "shiftDate": "2026-04-01",
+    "summary": "Failed login reports from internal users",
+    "whatHappened": "A few users reported login failures in the internal dashboard around 18:30. The issue did not affect all users. Clearing browser cache helped in some cases, but the root cause was not fully confirmed during the shift.",
+    "nextSteps": "Check authentication logs and confirm whether the issue is related to session handling. Ask support to report if new cases appear.",
+    "priority": "High"
+  },
+  {
+    "id": 1776417539199,
+    "createdAt": "2026-04-04T07:28:40.998877",
+    "onCallPerson": "Laura Nieminen",
+    "shiftDate": "2026-04-04",
+    "summary": "Background job delay in reporting service",
+    "whatHappened": "Nightly reporting jobs started later than expected. No data loss was detected, but report generation was delayed by about 25 minutes. Queue size briefly increased before returning closer to normal.",
+    "nextSteps": "Keep an eye on the reporting queue and verify tomorrow morning that all scheduled reports were delivered successfully.",
+    "priority": "Medium"
+  },
+  {
+    "id": 1776417548906,
+    "createdAt": "2026-04-09T16:55:12.445566",
+    "onCallPerson": "Aino Virtanen",
+    "shiftDate": "2026-04-09",
+    "summary": "Minor frontend display issue in admin view",
+    "whatHappened": "A layout issue was reported in the admin panel on smaller laptop screens. The issue did not block work, but one action button was partially hidden below the fold.",
+    "nextSteps": "Create a UI bug ticket and ask the frontend team to review responsive behaviour in the admin view.",
+    "priority": "Low"
+  },
+  {
+    "id": 1776417642185,
+    "createdAt": "2026-04-12T22:14:33.778899",
+    "onCallPerson": "Mikko Lahtinen",
+    "shiftDate": "2026-04-12",
+    "summary": "Disk usage alert on application server",
+    "whatHappened": "Disk usage crossed the warning threshold on one application server during the night. The system remained operational, but logs had grown faster than usual. Temporary cleanup was completed to free space.",
+    "nextSteps": "Review log retention settings and check why log volume increased. Confirm that automated cleanup is working as expected.",
+    "priority": "High"
+  },
+  {
+    "id": 1776417686979,
+    "createdAt": "2026-04-15T11:22:47.334455",
+    "onCallPerson": "Sara Virtanen",
+    "shiftDate": "2026-04-15",
+    "summary": "Third-party API timeout warnings",
+    "whatHappened": "Timeout warnings appeared intermittently when calling an external API dependency. The issue resolved on its own after a short period, but several retries were triggered and response times were inconsistent for about 15 minutes.",
+    "nextSteps": "Monitor external API reliability and review whether retry settings should be adjusted. No customer-facing outage confirmed.",
+    "priority": "High"
+  },
+  {
+    "id": 1776418636491,
+    "createdAt": "2026-04-18T08:39:05.667788",
+    "onCallPerson": "Emilia Nieminen",
+    "shiftDate": "2026-04-18",
+    "summary": "Unexpected spike in error logs after deployment",
+    "whatHappened": "Following the evening deployment, error logs increased significantly in one backend service. Most errors were related to a missing configuration value in a non-critical integration path. Core functionality remained available, but noise in monitoring increased.",
+    "nextSteps": "Verify deployment configuration, reduce alert noise if needed, and confirm with the team whether a hotfix or config update is required.",
+    "priority": "Medium"
+  }
+]

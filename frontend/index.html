@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Handover Tool</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div>
+                <h1>On-call Handover Tool</h1>
+                <p class="subtitle">Capture important handover notes and keep
+                    the next person up to speed.</p>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn active" data-view="formView">New handover</button>
+                <button class="nav-btn" data-view="listView">Recent handovers</button>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section id="formView" class="view active">
+                <div class="card">
+                    <h2>New handover</h2>
+                    <p class="section-intro">
+                        Record the key details from your shift so the next
+                        person has the right context.
+                    </p>
+                    <form id="handoverForm">
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="onCallPerson">Name</label>
+                                <input type="text" id="onCallPerson" name="onCallPerson" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="shiftDate">Date</label>
+                                <input type="date" id="shiftDate" name="shiftDate" required />
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="summary">Summary</label>
+                                <input
+                                    type="text"
+                                    id="summary"
+                                    name="summary"
+                                    placeholder="Short overview of the shift"
+                                    required
+                                />
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="whatHappened">What happened?</label>
+                                <textarea id="whatHappened" name="whatHappened" rows="3" placeholder="Service slowdown, alert triggered, workaround applied..." required></textarea>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="nextSteps">Next steps</label>
+                                <textarea id="nextSteps" name="nextSteps" rows="3" placeholder="What still needs attention or follow-up?" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="priority">Priority</label>
+                                <select id="priority" name="priority" required>
+                                    <option value="Low">Low</option>
+                                    <option value="Medium" selected>Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="primary-btn">Save entry</button>
+                        </div>
+
+                        <p id="formMessage" class="form-message"></p>
+                    </form>
+                </div>
+            </section>
+
+            <section id="listView" class="view">
+                <div class="card">
+                    <div class="list-header">
+                        <div>
+                            <h2>Recent handovers</h2>
+                        </div>
+
+                        <select id="sortSelect" class="sort-select">
+                            <option value="latest">Newest first</option>
+                            <option value="oldest">Oldest first</option>
+                            <option value="priority-high">Priority: High to Low</option>
+                            <option value="priority-low">Priority: Low to High</option>
+                        </select>
+                    </div>
+
+                    <div id="handoverList" class="handover-list"></div>
+                </div>
+            </section>
+        </main>
+
+        <script src="app.js"></script>
+    </body>
+</html>
